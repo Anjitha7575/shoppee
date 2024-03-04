@@ -1,17 +1,41 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react'
+import { store, persistor } from './configStore';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { StyledEngineProvider } from "@mui/material";
+import { ThemeProvider as ScThemeProvider } from "styled-components";
+import './index.css';
+
+
+const theme = createTheme({
+  palette: {
+    primary: { main: "#5263ff" },
+    bgClr: { main: "#848ee81c" },
+    fontColor: { main: "#282c3f" },
+    white: "#FFFFFF",
+    black: "#000000",
+    secondary: { main: "#f16565" },
+    teritary: { main: "#848ee81c" }
+  }
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <StyledEngineProvider injectFirst>
+          <ThemeProvider theme={theme}>
+            <ScThemeProvider theme={theme}>
+              <App />
+            </ScThemeProvider>
+          </ThemeProvider>
+        </StyledEngineProvider>
+      </PersistGate>
+    </Provider>
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
