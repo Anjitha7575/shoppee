@@ -19,10 +19,10 @@ const ProductCard = (props) => {
             {product && <>
                 <ImgDv><img src={product.thumbnail || ""} alt={product.title} /></ImgDv>
                 <div>
-                    <H3>{product.brand}</H3>
-                    <H4>{product.title}</H4>
-                    <Price>{afterDiscountPrice} <span className="actualprice">{getCorrectCurrencyVal(product.price)}</span><span className="discount">({product.discountPercentage}% OFF)</span></Price>
-                    <Rating ratetype={findRatingClr(product.rating)}>{product.rating} <span><i className="fa-solid fa-star"></i></span></Rating>
+                    <H3 aria-label={product.brand}>{product.brand}</H3>
+                    <H4 aria-label={product.title}>{product.title}</H4>
+                    <Price aria-label={afterDiscountPrice}>{afterDiscountPrice} <span className="actualprice">{getCorrectCurrencyVal(product.price)}</span><span className="discount">({product.discountPercentage}% OFF)</span></Price>
+                    <Rating aria-label={product.rating} ratetype={findRatingClr(product.rating)}>{product.rating} <span><i className="fa-solid fa-star"></i></span></Rating>
                 </div>
             </>}
             {itemPresentInCart ? <Stack
@@ -30,16 +30,16 @@ const ProductCard = (props) => {
                 spacing={2}
                 sx={{ width: "fit-content", margin: "auto", alignItems: "center" }}
             >
-                <Button variant="outlined" size='large' color='primary' onClick={() => props.minusItem(product)}>
+                <Button aria-label="remove one item" variant="outlined" size='large' color='primary' onClick={() => props.minusItem(product)}>
                     <i className="fa-solid fa-minus"></i>
                 </Button>
                 <span>{ItemsCount}</span>
-                <Button variant="outlined" size='large' color='primary' onClick={() => props.addItem(product)}>
+                <Button aria-label="add one item" variant="outlined" size='large' color='primary' onClick={() => props.addItem(product)}>
                     <i className="fa-solid fa-plus"></i>
                 </Button>
             </Stack> :
                 <div style={{ display: "flex" }}>
-                    <Button sx={{margin:"auto"}} onClick={onAddItemToCart} variant="outlined">Add To Cart</Button>
+                    <Button aria-label="add one item" sx={{margin:"auto"}} onClick={onAddItemToCart} variant="outlined">Add To Cart</Button>
                 </div>}
         </Card>
     )

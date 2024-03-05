@@ -5,7 +5,6 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import { AddNewAddressFields } from '../../../../../constants';
-import { required, mustBeNumber, minValue, composeValidators } from '../../../../../validations';
 import { FormSectionTitle, Col } from '../styles';
 import { Button } from '@mui/material';
 
@@ -20,7 +19,7 @@ export const NewAddressForm = (props) => {
 
     const renderInput = (labeltxt, inputType) => ({ input, meta }) => (
         <Col>
-            <TextField sx={{ width: "300px" }} inputProps={{ style: { padding: '10px', fontSize: "13px" } }}
+            <TextField aria-label={labeltxt} sx={{ width: "300px" }} inputProps={{ style: { padding: '10px', fontSize: "13px" } }}
                 {...input} type={inputType} placeholder={labeltxt} />
             {meta.error && meta.touched && <span className='err'>{meta.error}</span>}
         </Col>
@@ -28,12 +27,13 @@ export const NewAddressForm = (props) => {
 
     const RadioWrapper = (props) => {
         const {
-            input: { checked, value, name, onChange, ...restInput },
+            input: { checked, value, name, label, onChange, ...restInput },
         } = props;
 
         return (
             <Radio
                 name={name}
+                aria-label={label}
                 inputProps={restInput}
                 onChange={onChange}
                 checked={checked}
@@ -45,7 +45,7 @@ export const NewAddressForm = (props) => {
 
     return (<Form
         onSubmit={onSubmit}
-        initialValues={{ addressType: 'HOME'}}
+        initialValues={{ addressType: 'HOME' }}
         render={({ handleSubmit, form, submitting, pristine, values }) => (
             <form onSubmit={handleSubmit}>
                 {Object.values(AddNewAddressFields).map((item, index) => {
@@ -62,6 +62,7 @@ export const NewAddressForm = (props) => {
                                                 component={RadioWrapper}
                                                 type="radio"
                                                 value={f1.value}
+                                                label={f1.labeltxt}
                                             />
                                         }
                                         label={f1.labeltxt}

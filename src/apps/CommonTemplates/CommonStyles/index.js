@@ -71,6 +71,7 @@ export const U1 = styled.div`
     padding: 10px 0;
     border-radius: 20px;
     background: #ebecf680;
+    text-align: center;
     &:hover{
         background: #ebecf680;
     }

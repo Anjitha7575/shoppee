@@ -19,7 +19,11 @@ const theme = createTheme({
     black: "#000000",
     secondary: { main: "#f16565" },
     teritary: { main: "#848ee81c" }
-  }
+  },
+  typography: {
+    allVariants: {
+      fontFamily: '"Poppins",sans-serif',
+    }}
 });
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

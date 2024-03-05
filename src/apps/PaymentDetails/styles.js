@@ -32,6 +32,7 @@ export const R1 = styled.div`
   font-size: 15px;
   .txt{
     color: darkslategray;
+    font-family: "Poppins", sans-serif;
     margin: 0 20px;
   }
   .icon{
