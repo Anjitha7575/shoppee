@@ -6,6 +6,9 @@ export const Card = styled.div`
     background: #f9f9f9;
     border-radius: 20px;
     padding: 20px;
+    @media only screen and (max-width: 500px){
+        width: 38%;
+    }
 `;
 
 export const ImgDv = styled.div`
@@ -17,6 +20,13 @@ export const ImgDv = styled.div`
         max-height: 100%;
         height: 200px;
         border-radius: 20px;
+    }
+    @media only screen and (max-width: 500px){
+        width: fit-content;
+        height: 100px;
+        img{
+            height: 100px; 
+        }
     }
 `;
 
@@ -53,6 +63,10 @@ export const Price = styled.h3`
     text-overflow: ellipsis;
     white-space: nowrap;
     text-align: left;
+    @media only screen and (max-width: 500px){
+        word-break: break-word;
+        white-space: unset;
+    }
     .actualprice{
         text-decoration: line-through;
         font-size: 12px;
@@ -80,6 +94,9 @@ export const Rating = styled.div`
     border-radius: 2px;
     padding: 5px;
     background-color: ${props => props.theme.palette.white};
+    @media only screen and (max-width: 500px){
+        top: 100px;
+    }
     span{
         margin: 0 5px;
         ${(props) => {

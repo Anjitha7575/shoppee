@@ -6,7 +6,7 @@ import BillDetails from '../../../BillDetails';
 import AddressInfo from '../AddressInfo';
 
 
-const SelectedItems = (props) => {
+const CartCheckout = (props) => {
     const { productsCartItems } = props;
     const { cartItemsMapBasedOnId = {}, billDetails } = productsCartItems;
     let entries = Object.entries(cartItemsMapBasedOnId || {});
@@ -30,4 +30,4 @@ const mapStateToProps = (state) => ({
     productsCartItems: state.billingModel.productsCartItems,
 })
 
-export default connect(mapStateToProps, {})(React.memo(SelectedItems));
+export default connect(mapStateToProps, {})(React.memo(CartCheckout));

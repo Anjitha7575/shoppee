@@ -6,6 +6,7 @@ export const M1 = styled.div`
     border: 1px solid #dcdcdc;
     padding: 20px;
     border-radius: 20px;
+    margin-top: 50px;
     .r1{
         padding: 20px 0;
     }

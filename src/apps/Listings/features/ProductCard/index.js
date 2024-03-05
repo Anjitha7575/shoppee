@@ -28,17 +28,19 @@ const ProductCard = (props) => {
             {itemPresentInCart ? <Stack
                 direction="row"
                 spacing={2}
-                sx={{width:"fit-content", margin:"auto"}}
+                sx={{ width: "fit-content", margin: "auto", alignItems: "center" }}
             >
-                <Button variant="outlined" size='medium' color='primary' onClick={() => props.minusItem(product)}>
+                <Button variant="outlined" size='large' color='primary' onClick={() => props.minusItem(product)}>
                     <i className="fa-solid fa-minus"></i>
                 </Button>
                 <span>{ItemsCount}</span>
-                <Button variant="outlined" size='medium' color='primary' onClick={() => props.addItem(product)}>
+                <Button variant="outlined" size='large' color='primary' onClick={() => props.addItem(product)}>
                     <i className="fa-solid fa-plus"></i>
                 </Button>
             </Stack> :
-                <Button onClick={onAddItemToCart} variant="outlined">Add To Cart</Button>}
+                <div style={{ display: "flex" }}>
+                    <Button sx={{margin:"auto"}} onClick={onAddItemToCart} variant="outlined">Add To Cart</Button>
+                </div>}
         </Card>
     )
 }

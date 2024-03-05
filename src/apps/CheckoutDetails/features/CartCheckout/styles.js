@@ -7,6 +7,7 @@ export const M1 = styled.div`
     gap: 50px;
     @media only screen and (max-width: 1024px){
         flex-wrap: wrap;
+        margin-top: 50px;
     }
 `;
 

@@ -71,7 +71,7 @@ export const NewAddressForm = (props) => {
                         </>
                             :
                             <>{item.fields.map((f1, ind2) => {
-                                return (<Field key={`field_${ind2}`} name={f1.name} validate={required}>
+                                return (<Field key={`field_${ind2}`} name={f1.name} validate={f1.validation}>
                                     {renderInput(f1.labeltxt, f1.inputType)}
                                 </Field>)
                             })}</>}

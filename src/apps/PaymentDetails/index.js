@@ -17,7 +17,7 @@ const PaymentDetails = (props) => {
     let userDetails = data ? data[data?.uid] : {};
     const { status: paymentStatus = "", data : paymentApiData } = paymentDetails;
     const [paymentMode, setPaymentMode] = useState("1001_111_cod");
-    let BackBtntxt = "Go Back";
+    let BackBtntxt = "Back";
     let BackFunc = props.goToPrevpage;
     if (paymentStatus === "success") {
         BackBtntxt = "Do More Shopping";

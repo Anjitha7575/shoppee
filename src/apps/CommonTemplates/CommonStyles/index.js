@@ -85,11 +85,14 @@ export const Top1 = styled.div`
     display: flex;
     margin-bottom: 10px;
     position: fixed;
-    top: 20px;
+    top: 90px;
     z-index: 100;
-    left: 200px;
+    left: 50px;
     span{
         margin: 0 10px;
+    }
+    button{
+        font-size: 12px;
     }
 `
 
@@ -101,7 +104,7 @@ export const UserName = ({ name, func }) => {
 
 export const BackBtn = ({ txt, func }) => {
     return (<Top1>
-        <Button variant='outlined' onClick={func}><span><i className="fa-solid fa-arrow-left"></i></span>{txt}</Button>
+        <Button size='small' variant='outlined' onClick={func}><span><i className="fa-solid fa-arrow-left"></i></span>{txt}</Button>
     </Top1>)
 }
 

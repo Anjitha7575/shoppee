@@ -20,6 +20,10 @@ export const C1 = styled.div`
     @media only screen and (max-width: 768px){
         margin-top: 50px;
     }
+    @media only screen and (max-width: 500px){
+        width: calc(100% - 20px);
+        gap: 10px;
+    }
 `;
 
 export const Actions = styled.div`
