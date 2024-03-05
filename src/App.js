@@ -5,7 +5,7 @@ import './App.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 
 function App() {
-  return (<BrowserRouter>
+  return (<BrowserRouter basename={process.env.PUBLIC_URL}>
     <div className="App">
       <Routes>
         <Route exact path="/login" element={<Login />} />
