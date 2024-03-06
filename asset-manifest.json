@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/shoppee/static/css/main.cc7b3fc7.css",
-    "main.js": "/shoppee/static/js/main.9570d2ca.js",
-    "Login.js": "/shoppee/static/js/Login.536cb9af.chunk.js",
-    "ShopStore.js": "/shoppee/static/js/ShopStore.a49feea2.chunk.js",
+    "main.js": "/shoppee/static/js/main.4092f59c.js",
+    "Login.js": "/shoppee/static/js/Login.9cb7b2ab.chunk.js",
+    "ShopStore.js": "/shoppee/static/js/ShopStore.611496c5.chunk.js",
     "static/js/89.ed93cae8.chunk.js": "/shoppee/static/js/89.ed93cae8.chunk.js",
     "static/js/447.b41eb064.chunk.js": "/shoppee/static/js/447.b41eb064.chunk.js",
     "static/js/981.0e44de57.chunk.js": "/shoppee/static/js/981.0e44de57.chunk.js",
@@ -17,15 +17,15 @@
     "static/media/fa-v4compatibility.woff2": "/shoppee/static/media/fa-v4compatibility.b3049b13a93f07e026fc.woff2",
     "index.html": "/shoppee/index.html",
     "main.cc7b3fc7.css.map": "/shoppee/static/css/main.cc7b3fc7.css.map",
-    "main.9570d2ca.js.map": "/shoppee/static/js/main.9570d2ca.js.map",
-    "Login.536cb9af.chunk.js.map": "/shoppee/static/js/Login.536cb9af.chunk.js.map",
-    "ShopStore.a49feea2.chunk.js.map": "/shoppee/static/js/ShopStore.a49feea2.chunk.js.map",
+    "main.4092f59c.js.map": "/shoppee/static/js/main.4092f59c.js.map",
+    "Login.9cb7b2ab.chunk.js.map": "/shoppee/static/js/Login.9cb7b2ab.chunk.js.map",
+    "ShopStore.611496c5.chunk.js.map": "/shoppee/static/js/ShopStore.611496c5.chunk.js.map",
     "89.ed93cae8.chunk.js.map": "/shoppee/static/js/89.ed93cae8.chunk.js.map",
     "447.b41eb064.chunk.js.map": "/shoppee/static/js/447.b41eb064.chunk.js.map",
     "981.0e44de57.chunk.js.map": "/shoppee/static/js/981.0e44de57.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cc7b3fc7.css",
-    "static/js/main.9570d2ca.js"
+    "static/js/main.4092f59c.js"
   ]
 }
