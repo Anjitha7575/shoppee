@@ -5,6 +5,9 @@ export const M1 = styled.div`
     align-items: flex-start;
     justify-content: center;
     flex-wrap: wrap;
+    @media only screen and (max-width: 1024px){
+        margin-top: 50px;
+    }
 `;
 
 export const D1 = styled.div`
@@ -45,6 +48,9 @@ export const VLine = styled.div`
     height: 100vh;
     border-left: 1px dashed #dcdcdc;
     margin: 0 50px;
+    @media only screen and (max-width: 1024px){
+        height: 20px;
+    }
 `;
 
 export const D2 = styled.div`

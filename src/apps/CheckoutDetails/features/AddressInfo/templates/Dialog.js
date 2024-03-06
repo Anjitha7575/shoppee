@@ -9,6 +9,7 @@ export const useStyles = makeStyles(() => ({
             '@media only screen and (max-width: 768px)':{
                 width: 'auto',
                 maxWidth: 'unset',
+                minWidth: "400px"
             }
         }
     },

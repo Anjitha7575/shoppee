@@ -30,11 +30,11 @@ const ProductCard = (props) => {
                 spacing={2}
                 sx={{ width: "fit-content", margin: "auto", alignItems: "center" }}
             >
-                <Button aria-label="remove one item" variant="outlined" size='large' color='primary' onClick={() => props.minusItem(product)}>
+                <Button sx={{minWidth:"auto"}} aria-label="remove one item" variant="outlined" size='large' color='primary' onClick={() => props.minusItem(product)}>
                     <i className="fa-solid fa-minus"></i>
                 </Button>
                 <span>{ItemsCount}</span>
-                <Button aria-label="add one item" variant="outlined" size='large' color='primary' onClick={() => props.addItem(product)}>
+                <Button sx={{minWidth:"auto"}} aria-label="add one item" variant="outlined" size='large' color='primary' onClick={() => props.addItem(product)}>
                     <i className="fa-solid fa-plus"></i>
                 </Button>
             </Stack> :

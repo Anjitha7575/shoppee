@@ -7,7 +7,7 @@ export const Card = styled.div`
     border-radius: 20px;
     padding: 20px;
     @media only screen and (max-width: 500px){
-        width: 38%;
+        width: calc(50% - 45px);
     }
 `;
 
