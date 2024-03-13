@@ -9,6 +9,7 @@ export const Card = styled.div`
     @media only screen and (max-width: 500px){
         width: calc(50% - 45px);
     }
+    box-shadow: 0px 20px 40px rgba(52,53,99,0.2), 0px 1px 3px rgba(0,0,0,0.05);
 `;
 
 export const ImgDv = styled.div`
