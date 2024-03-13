@@ -35,7 +35,7 @@ export const Actions = styled.div`
     position: fixed;
     top: 0;
     z-index: 100;
-    height: 80px;
+    height: 60px;
     width: calc(100% - ${2 * PADDING_VAL}px);
     @media only screen and (max-width: 768px){
         width: 100%;

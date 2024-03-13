@@ -7,7 +7,7 @@ export const Head = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
+    height: 60px;
     padding: 0 ${PADDING_VAL}px;
     box-shadow: 0 4px 12px 0 rgba(0,0,0,.05);
     background-color: ${props => props.theme.palette.white};
@@ -17,8 +17,8 @@ export const Head = styled.header`
 `;
 
 export const AppDv = styled.div`
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     img{
         max-width: 100%;
         max-height: 100%;

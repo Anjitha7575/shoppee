@@ -32,10 +32,22 @@ export default function FreeSoloCreateOption(props) {
                 return option;
             }}
             renderOption={(props, option) => <li {...props}>{option}</li>}
-            sx={{ width: 300 }}
+            sx={{
+                width: 300,
+                height: 50,
+                "& .MuiOutlinedInput-root": {
+                    height: '50px',
+                    padding: '5px 10px !important',
+                    margin: '0',
+                    fontSize: '13px'
+                },
+                "& .MuiOutlinedInput-root .MuiAutocomplete-endAdornment":{
+                    right: 85
+                }
+            }}
             freeSolo
             renderInput={(params) => (
-                <TextField onChange={handleChange2} {...params} label={filterLabel} />
+                <TextField onChange={handleChange2} {...params} placeholder={filterLabel} />
             )}
         />
     );

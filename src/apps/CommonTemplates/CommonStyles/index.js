@@ -8,8 +8,8 @@ export const M1 = styled.div`
     align-items: center;
     flex-direction: column;
     .icon{
-        font-size: 22px;
-        height: 32px;
+        font-size: 17px;
+        height: 25px;
     }
     .txt{
         font-size: 13px;

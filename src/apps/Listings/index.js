@@ -50,7 +50,7 @@ const Listings = (props) => {
             <Actions>
                 <T2>
                     <FilterProducts filterVal={filterParam} setFilterVal={setFilterParam} doSearchBasedOnVal={doSearchBasedOnVal} />
-                    <Button className='searchP' onClick={filterParam.length > 0 ? doSearch : () => { }}>Search</Button>
+                    <Button className='searchP' onClick={(filterParam || "").length > 0 ? doSearch : () => { }}>Search</Button>
                 </T2>
                 <Badge className='cartbadge' onClick={goToCartStage} badgeContent={cartItems.length} color="secondary">
                     <TxtButtonWithIcon txt="Cart" icon="fa-solid fa-cart-shopping" />
