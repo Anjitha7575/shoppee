@@ -25,8 +25,13 @@ function addToMapCart(item, obj) {
     return obj;
 }
 
-const removeItemsFromCartArr = (cartItems, item) => {
-    let lastIndex = cartItems.findLastIndex(o => o.id === item.id);
+const removeItemsFromCartArr = (cartItems=[], item={}) => {
+    let lastIndex = -1;
+    if(cartItems.findLastIndex){
+        lastIndex = cartItems.findLastIndex (o => o.id === item.id);
+    }else{
+        lastIndex = cartItems.map(el => el.id).lastIndexOf(item.id);
+    }
     if (lastIndex > -1) {
         cartItems.splice(lastIndex, 1);
     }

@@ -11,7 +11,7 @@ const CartCheckout = (props) => {
     const { cartItemsMapBasedOnId = {}, billDetails } = productsCartItems;
     let entries = Object.entries(cartItemsMapBasedOnId || {});
     return (
-        <M1>
+        <M1 data-testid="cart-check-view">
             <div>
                 <AddressInfo />
                 <C1>

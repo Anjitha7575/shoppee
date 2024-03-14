@@ -36,7 +36,7 @@ const SelectedCards = (props) => {
                             <i className="fa-solid fa-plus"></i>
                         </Button>
                     </Stack>
-                    <Button variant="contained" color='teritary' onClick={() => props.deleteEntireItem(details)}>Delete</Button>
+                    <Button variant="contained" color='inherit' onClick={() => props.deleteEntireItem(details)}>Delete</Button>
                 </Row>
             </>}
         </Card>

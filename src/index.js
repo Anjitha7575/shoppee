@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router } from "react-router-dom";
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react'
@@ -6,7 +7,6 @@ import { store, persistor } from './configStore';
 import App from './App';
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { StyledEngineProvider } from "@mui/material";
-import { ThemeProvider as ScThemeProvider } from "styled-components";
 import './index.css';
 
 
@@ -23,22 +23,23 @@ const theme = createTheme({
   typography: {
     allVariants: {
       fontFamily: '"Poppins",sans-serif',
-    }}
+    }
+  }
 });
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <StyledEngineProvider injectFirst>
-          <ThemeProvider theme={theme}>
-            <ScThemeProvider theme={theme}>
+      <Router basename={process.env.PUBLIC_URL}>
+        <PersistGate loading={null} persistor={persistor}>
+          <StyledEngineProvider injectFirst>
+            <ThemeProvider theme={theme}>
               <App />
-            </ScThemeProvider>
-          </ThemeProvider>
-        </StyledEngineProvider>
-      </PersistGate>
+            </ThemeProvider>
+          </StyledEngineProvider>
+        </PersistGate>
+      </Router>
     </Provider>
   </React.StrictMode>
 );

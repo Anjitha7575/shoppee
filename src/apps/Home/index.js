@@ -5,15 +5,15 @@ import { connect } from 'react-redux';
 // import PaymentDetails from '../PaymentDetails';
 // import CheckoutDetails from '../CheckoutDetails';
 
-const Listings = lazy(() => import(/* webpackChunkName: 'Login' */ '../Listings'));
-const PaymentDetails = lazy(() => import(/* webpackChunkName: 'ShopStore' */ '../PaymentDetails'));
-const CheckoutDetails = lazy(() => import(/* webpackChunkName: 'ShopStore' */ '../CheckoutDetails'));
+const Listings = lazy(() => import(/* webpackChunkName: 'Listings' */ '../Listings'));
+const PaymentDetails = lazy(() => import(/* webpackChunkName: 'PaymentDetails' */ '../PaymentDetails'));
+const CheckoutDetails = lazy(() => import(/* webpackChunkName: 'CheckoutDetails' */ '../CheckoutDetails'));
 
 const Home = (props) => {
     const { userShoppingStage } = props;
     const { activeStep } = userShoppingStage;
 
-    return (
+    return (<div className='home-page' data-activestep={activeStep}>
         <Suspense fallback={<div>Loading...</div>}>
             <>
                 {activeStep === 1 ? <Listings /> :
@@ -23,7 +23,7 @@ const Home = (props) => {
                 }
             </>
         </Suspense>
-    )
+    </div>)
 }
 
 const mapStateToProps = (state) => ({

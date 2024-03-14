@@ -1,0 +1,77 @@
+import React, { lazy } from "react";
+import { fireEvent, render, screen, waitFor } from '@testing-library/react'
+import { Provider } from 'react-redux';
+import '@testing-library/jest-dom'
+import Home from './index';
+import { store } from '../../configStore';
+import { BrowserRouter } from 'react-router-dom';
+
+describe("Home Page", () => {
+
+    it('lazy loading as initial render', async () => {
+
+        render(
+            <Provider store={store}>
+                <BrowserRouter>
+                    <Home />
+                </BrowserRouter>
+            </Provider>
+        )
+        await waitFor(() => expect(screen.getByText(/Loading/i)).toBeInTheDocument())
+    });
+
+    it('Listing as default view', async () => {
+
+        render(<Provider store={store}>
+            <BrowserRouter>
+                <Home />
+            </BrowserRouter>
+        </Provider>)
+
+        await waitFor(() => expect(screen.getByTestId("listing-page")).toBeInTheDocument(), { timeout: 2000 })
+    });
+
+
+    it('Products List Rendered', async () => {
+
+        render(<Provider store={store}>
+            <BrowserRouter>
+                <Home />
+            </BrowserRouter>
+        </Provider>)
+
+        await waitFor(() => expect(screen.getByTestId("products-list")).toBeInTheDocument(), { timeout: 2000 })
+    });
+
+    it('Click on Cart button', async () => {
+
+        render(<Provider store={store}>
+            <BrowserRouter>
+                <Home />
+            </BrowserRouter>
+        </Provider>)
+
+        await waitFor(() => { return screen.getByTestId('show-carts-page'); }, { timeout: 2000 });
+        const button = screen.getByTestId('show-carts-page');
+        fireEvent.click(button);
+        await waitFor(() => {
+            expect(screen.getByTestId('cart-empty-view')).toBeInTheDocument();
+        }, { timeout: 1000 });
+    });
+
+    it('Back to listings from empty cart page', async () => {
+
+        render(<Provider store={store}>
+            <BrowserRouter>
+                <Home />
+            </BrowserRouter>
+        </Provider>)
+
+        await waitFor(() => { return screen.getByTestId('back-to-listings-from-empty-cart'); }, { timeout: 2000 });
+        const button = screen.getByTestId('back-to-listings-from-empty-cart');
+        fireEvent.click(button);
+        await waitFor(() => {
+            expect(screen.getByTestId('products-list')).toBeInTheDocument();
+        }, { timeout: 1000 });
+    });
+});

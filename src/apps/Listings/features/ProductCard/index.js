@@ -6,16 +6,16 @@ import { Card, ImgDv, H3, H4, Price, Rating, Info } from './styles';
 import { connect } from 'react-redux';
 
 const ProductCard = (props) => {
-    const { product, onAddItemToCart, productsCartItems } = props;
+    const { product = {}, onAddItemToCart, productsCartItems = {} } = props;
     const afterDiscountPrice = getAfterDiscountPrice(product.price, product.discountPercentage);
     const { cartItemsMapBasedOnId = {} } = productsCartItems;
-    const itemPresentInCart = cartItemsMapBasedOnId[product.id];
+    const itemPresentInCart = cartItemsMapBasedOnId ? cartItemsMapBasedOnId[product.id] : false;
     let ItemsCount = 0;
     if (itemPresentInCart) {
-        ItemsCount = cartItemsMapBasedOnId[product.id]["count"];
+        ItemsCount = cartItemsMapBasedOnId ? cartItemsMapBasedOnId[product.id]["count"] : 0;
     }
     return (
-        <Card>
+        <Card data-testid="single-product">
             {product && <>
                 <ImgDv><img src={product.thumbnail || ""} alt={product.title} /></ImgDv>
                 <div>
@@ -30,16 +30,16 @@ const ProductCard = (props) => {
                 spacing={2}
                 sx={{ width: "fit-content", margin: "auto", alignItems: "center" }}
             >
-                <Button sx={{minWidth:"auto"}} aria-label="remove one item" variant="outlined" size='large' color='primary' onClick={() => props.minusItem(product)}>
+                <Button data-testid="minus-item" sx={{ minWidth: "auto" }} aria-label="remove one item" variant="outlined" size='large' color='primary' onClick={() => props.minusItem(product)}>
                     <i className="fa-solid fa-minus"></i>
                 </Button>
                 <span>{ItemsCount}</span>
-                <Button sx={{minWidth:"auto"}} aria-label="add one item" variant="outlined" size='large' color='primary' onClick={() => props.addItem(product)}>
+                <Button data-testid="plus-item" sx={{ minWidth: "auto" }} aria-label="add one item" variant="outlined" size='large' color='primary' onClick={() => props.addItem(product)}>
                     <i className="fa-solid fa-plus"></i>
                 </Button>
             </Stack> :
                 <div style={{ display: "flex" }}>
-                    <Button aria-label="add one item" sx={{margin:"auto"}} onClick={onAddItemToCart} variant="outlined">Add To Cart</Button>
+                    <Button data-testid="add-to-item" aria-label="add one item" sx={{ margin: "auto" }} onClick={onAddItemToCart} variant="outlined">Add To Cart</Button>
                 </div>}
         </Card>
     )

@@ -47,7 +47,7 @@ export const NewAddressForm = (props) => {
         onSubmit={onSubmit}
         initialValues={{ addressType: 'HOME' }}
         render={({ handleSubmit, form, submitting, pristine, values }) => (
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} data-testid="new-address-form">
                 {Object.values(AddNewAddressFields).map((item, index) => {
                     return (<Fragment key={`section_${index}`}>
                         <FormSectionTitle>{item.title}</FormSectionTitle>

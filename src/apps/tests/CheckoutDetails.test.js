@@ -1,0 +1,31 @@
+// import React from 'react';
+// import { render, screen, waitFor, fireEvent } from '@testing-library/react';
+// import { handlers } from '../../mocks/products';
+// import { Provider } from 'react-redux';
+// import { store } from '../../configStore';
+// import { BrowserRouter } from 'react-router-dom';
+// import { setupServer } from 'msw/node'
+
+// // import CheckoutDetails from './index';
+
+// // const server = setupServer(...handlers);
+// // beforeAll(() => server.listen());
+
+// // describe("Listings", () => {
+//     // it('click on cart when no.of items > 0', async () => {
+
+//     //     const { debug } = render(<Provider store={store}>
+//     //         <BrowserRouter>
+//     //             <CheckoutDetails />
+//     //         </BrowserRouter>
+//     //     </Provider>);
+//     //     await waitFor(() => { return screen.getByTestId('show-carts-page'); }, { timeout: 2000 });
+//     //     const button = screen.getByTestId('show-carts-page');
+//     //     fireEvent.click(button);
+//     //     await waitFor(() => {
+//     //         console.log("store", store.getState())
+//     //         // expect(store.getState().billingModel?.productsCartItems?.cartItems?.length).toBe(1);
+//     //     }, { timeout: 5000 });
+//     //     debug();
+//     // })
+// // })

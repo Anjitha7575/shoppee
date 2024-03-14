@@ -59,7 +59,7 @@ function AddressInfo(props) {
                     Change Address
                 </Button>
             </AddressBox> :
-                <Button sx={{ width: "300px", marginBottom: '10px' }} size="large"
+                <Button data-testid="add-new-address0" sx={{ width: "300px", marginBottom: '10px' }} size="large"
                     variant="outlined" onClick={() => addNewAddressAndOpenCombined()}>
                     <i className="fa-solid fa-plus"></i>&nbsp;
                     Add New Address
@@ -69,13 +69,13 @@ function AddressInfo(props) {
                 open={open}
                 onClose={handleClose}
             >
-                <M1>
+                <M1 data-testid="address-details-popup">
                     {newAddressFormShow ? <>
                         {(addressList.length > 0) && <Button className='custom-backbtn' variant="outlined" onClick={() => setNewAddressFormShow(false)}>
                             <i className="fa-solid fa-arrow-left-long"></i>
                         </Button>}
                     </> :
-                        <Button sx={{ width: "300px" }} size="large"
+                        <Button data-testid="add-new-address1" sx={{ width: "300px" }} size="large"
                             variant="outlined" onClick={() => setNewAddressFormShow(true)}>
                             <i className="fa-solid fa-plus"></i>&nbsp;
                             Add New Address

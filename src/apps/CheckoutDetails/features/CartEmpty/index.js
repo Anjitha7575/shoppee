@@ -8,7 +8,7 @@ const CartEmpty = (props) => {
     return (
         <>
             <EmptyCartMsg />
-            <Button sx={{display:"flex", margin:"auto"}} variant="outlined" onClick={props.goToNextStage}>Add Items To Cart</Button>
+            <Button data-testid="back-to-listings-from-empty-cart" sx={{display:"flex", margin:"auto"}} variant="outlined" onClick={props.goToNextStage}>Add Items To Cart</Button>
         </>
     )
 }

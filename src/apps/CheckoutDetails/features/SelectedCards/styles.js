@@ -43,7 +43,7 @@ export const ImgDv = styled.div`
 export const H3 = styled.h3`
     font-size: 13px;
     font-weight: 700;
-    color: ${props => props.theme.palette.fontColor.main};
+    color: #282c3f;
     margin-bottom: 6px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -67,7 +67,7 @@ export const H4 = styled.h4`
 export const Price = styled.h3`
     font-size: 13px;
     font-weight: 700;
-    color: ${props => props.theme.palette.fontColor.main};
+    color: #282c3f;
     margin: 10px 0;
     overflow: hidden;
     text-overflow: ellipsis;

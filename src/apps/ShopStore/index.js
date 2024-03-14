@@ -8,8 +8,8 @@ const ShopStore = () => {
 
     return (
         <>
-            <Head>
-                <AppDv><img src={AppIconImgUrl} /></AppDv>
+            <Head data-testid="shopee-header">
+                <AppDv><img src={AppIconImgUrl} alt='logo' /></AppDv>
                 <SignInBtn/>
             </Head>
             <M1>

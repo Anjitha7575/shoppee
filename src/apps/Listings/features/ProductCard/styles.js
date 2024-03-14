@@ -34,7 +34,7 @@ export const ImgDv = styled.div`
 export const H3 = styled.h3`
     font-size: 15px;
     font-weight: 700;
-    color: ${props => props.theme.palette.fontColor.main};
+    color: #282c3f;
     margin-bottom: 6px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -58,7 +58,7 @@ export const H4 = styled.h4`
 export const Price = styled.h3`
     font-size: 15px;
     font-weight: 700;
-    color: ${props => props.theme.palette.fontColor.main};
+    color: #282c3f;
     margin: 10px 0;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -94,7 +94,7 @@ export const Rating = styled.div`
     justify-content: center;
     border-radius: 2px;
     padding: 5px;
-    background-color: ${props => props.theme.palette.white};
+    background-color: #FFFFFF;
     @media only screen and (max-width: 500px){
         top: 100px;
     }
@@ -131,10 +131,10 @@ export const Rating = styled.div`
 
     
 export const Info = styled.div`
-    background: ${props => props.theme.palette.primary.main};
+    background: #5263ff;
     margin: 5px 0;
     font-size: 12px;
     border-radius: 20px;
     padding: 5px;
-    color: ${props => props.theme.palette.white};
+    color: #FFFFFF;
 `;

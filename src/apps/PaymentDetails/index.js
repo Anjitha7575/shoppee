@@ -51,7 +51,7 @@ const PaymentDetails = (props) => {
             {paymentStatus === "error" && <PaymentErr>{paymentApiData}</PaymentErr>}
             {paymentStatus === "success" ?
                 <PaymentSuccess /> :
-                <M1>
+                <M1 data-testid="payment-view">
                     <D1>
                         <RadioGroup
                             className='payment-selection'

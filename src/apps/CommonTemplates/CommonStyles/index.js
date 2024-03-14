@@ -29,7 +29,7 @@ export const M2 = styled.div`
     padding: 40px;
     .bag-icon{
         font-size: 120px;
-        color: ${props => props.theme.palette.primary.main};
+        color: #5263ff;
         transform: rotate(10deg);
         margin: 30px;
     }
@@ -43,7 +43,7 @@ export const M2 = styled.div`
 export const TxtButtonWithIcon = ({ txt, icon }) => {
     return <Button sx={{
         p: 0,
-        minWidth: "unset",
+        minWidth: "unset"
     }}>
         <M1>
             <div className='icon'><i className={icon}></i></div>
@@ -54,7 +54,7 @@ export const TxtButtonWithIcon = ({ txt, icon }) => {
 }
 
 export const EmptyCartMsg = () => {
-    return (<M2>
+    return (<M2 data-testid="cart-empty-view">
         <div className='bag-icon'>
             <i className="fa-solid fa-bag-shopping"></i></div>
         <div className='bag-txt'>Nothing in your bag. Let's add your favorites!</div>

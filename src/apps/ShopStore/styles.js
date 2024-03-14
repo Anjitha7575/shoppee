@@ -10,7 +10,7 @@ export const Head = styled.header`
     height: 60px;
     padding: 0 ${PADDING_VAL}px;
     box-shadow: 0 4px 12px 0 rgba(0,0,0,.05);
-    background-color: ${props => props.theme.palette.white};
+    background-color: #FFFFFF;
     position: sticky;
     top: 0;
     z-index: 100;

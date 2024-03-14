@@ -46,21 +46,21 @@ const Listings = (props) => {
     }
 
     return (
-        <M1>
+        <M1 data-testid="listing-page">
             <Actions>
                 <T2>
                     <FilterProducts filterVal={filterParam} setFilterVal={setFilterParam} doSearchBasedOnVal={doSearchBasedOnVal} />
                     <Button className='searchP' onClick={(filterParam || "").length > 0 ? doSearch : () => { }}>Search</Button>
                 </T2>
-                <Badge className='cartbadge' onClick={goToCartStage} badgeContent={cartItems.length} color="secondary">
+                <Badge data-testid="show-carts-page" className='cartbadge' onClick={goToCartStage} badgeContent={cartItems.length} color="secondary">
                     <TxtButtonWithIcon txt="Cart" icon="fa-solid fa-cart-shopping" />
                 </Badge>
             </Actions>
             {(status === "loading") ? <C1><i className="fa-solid fa-spinner"></i></C1> :
-                (status === "error") ? <C1>Something went wrong!</C1> :
+                (status === "error") ? <C1 data-testid="products-error">Something went wrong!</C1> :
                     <>
                         {productData?.products.length > 0 ? <>
-                            <C1>
+                            <C1 data-testid="products-list">
                                 {(productData?.products || []).map((item, index) => {
                                     return <ProductCard
                                         key={item.id || index}
